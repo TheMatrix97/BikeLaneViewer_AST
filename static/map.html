@@ -31,7 +31,7 @@
         }).addTo(map);
 
         // Fetch GeoJSON data and add it to the map
-        fetch('/data')
+        fetch('/api/data/bikelanes')
             .then(response => response.json())
             .then(data => {
                 var geojsonLayer = L.geoJSON(data).addTo(map);
