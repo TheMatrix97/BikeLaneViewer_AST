@@ -19,6 +19,7 @@ app.use(session({
 app.use(bodyParser.json());
 
 // Swagger
+app.use('/api/doc/swagger.json', express.static('./swagger_output.json'))
 app.use('/api/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 // Routes
