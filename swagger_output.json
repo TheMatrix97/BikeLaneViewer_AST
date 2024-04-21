@@ -7,7 +7,12 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000/"
+      "url": "http://localhost:3000/",
+      "description": "Localhost"
+    },
+    {
+      "url": "http://host.docker.internal:3000/",
+      "description": "docker host"
     }
   ],
   "paths": {
@@ -172,6 +177,25 @@
           },
           "500": {
             "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/data/search": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "term",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }

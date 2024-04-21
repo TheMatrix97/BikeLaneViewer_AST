@@ -35,6 +35,7 @@ router.post('/', (req, res) => {
 
 // Route to get all users
 router.get('/', (req, res) => {
+    //throw new Error("¡Ups, algo ha salido mal!");
     res.json(users);
     /*
     #swagger.responses[200] = {
