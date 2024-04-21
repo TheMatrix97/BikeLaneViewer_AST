@@ -19,5 +19,11 @@ router.get('/bikelanes', async (req, res) => {
     }*/
 });
 
+router.get('/search', (req, res) => {
+    const searchTerm = req.query.term;
+
+    // Vulnerable code - rendering user input directly in HTML response
+    res.send("alert('not implemented')");
+});
 
 module.exports = router;

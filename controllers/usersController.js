@@ -4,10 +4,15 @@ const router = express.Router();
 // In-memory storage for users
 let users = [];
 
+var n = 0;
+
 // Route to create a new user
 router.post('/', (req, res) => {
     const newUser = req.body;
-    newUser.id = users.length;
+    newUser.id = n++;
+    if (n === NaN) {
+        console.log("n is not a number error");
+    }
     users.push(newUser);
     res.status(201).json(newUser);
     /*

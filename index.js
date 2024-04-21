@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const routes = require('./routes');
 const bodyParser = require('body-parser');
 
@@ -8,6 +9,11 @@ const swaggerFile = require('./swagger_output.json')
 
 const app = express();
 const port = 3000;
+
+app.use(session({
+  cookie: {httpOnly: false},
+  secret: 'keyboard cat',
+})),
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
