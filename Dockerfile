@@ -1,5 +1,5 @@
 # Use the official Node.js image as base
-FROM node:node:20.12.2-alpine3.19
+FROM node:20.12.2-alpine3.19
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Command to run the application
-CMD ["node", "index.js"]
+CMD ["npm", "run", "start"]
