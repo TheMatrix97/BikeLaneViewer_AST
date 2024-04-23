@@ -1,6 +1,10 @@
 # Use the official Node.js image as base
 FROM node:20.12.2-alpine3.19
 
+# Upgrade sec packages
+
+RUN apk update && apk upgrade && npm install -g npm@10.5.1
+
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
