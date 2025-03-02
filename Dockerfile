@@ -1,9 +1,6 @@
 # Use the official Node.js image as base
-FROM node:23.9.0-alpine3.21
+FROM node:23.9.0-bookworm
 
-# Upgrade sec packages
-
-RUN apk update && apk upgrade
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
